@@ -6,10 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.6.4">
+    <!-- Fails in docker build. To have it pass, remove runtime from the list of included assets -->
+    <!-- <PackageReference Include="GitVersion.MsBuild" Version="5.6.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <!--<IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
+    </PackageReference> -->
+    <!-- This works (upgrade to v5.6.8) -->
+    <PackageReference Include="GitVersion.MsBuild" Version="5.6.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
